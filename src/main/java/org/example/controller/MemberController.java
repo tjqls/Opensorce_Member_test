@@ -182,7 +182,7 @@ public class MemberController {
         if(Container.session.isLogined() == false){
             System.out.println("로그인상태가 아닙니다.");
         }else{
-            System.out.println(Container.session.loginedMemberId.getLoginId());
+            System.out.println(Container.session.loginedMember.getLoginId());
         }
     }
 }
