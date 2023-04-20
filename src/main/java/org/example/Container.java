@@ -11,7 +11,8 @@ import org.example.session.Session;
 import java.sql.Connection;
 import java.util.Scanner;
 
-public class Container {
+public class Container { // 쓸 것들을 선언해놓음 Container 클래스 안에
+    // Container 클래스
     public static ContentRepository contentRepository;
     public static MemberRepository memberRepository;
 
@@ -26,7 +27,7 @@ public class Container {
     public static Connection conn;
     public static Rq rq;
 
-    public static void init(){
+    public static void init(){ //App에서 다 쓰는 것들을 모아놓음 나중에 App클래스에다 선언만 하면 싹다 사용 가능 하나의 컨테이너 안에 여러 요소들을 집어넣음
         contentRepository = new ContentRepository();
         memberRepository = new MemberRepository();
 
