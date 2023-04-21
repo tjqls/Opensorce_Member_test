@@ -81,7 +81,9 @@ public class App {
             Container.contentController.modify();
         } else if(rq.getUrlPath().equals("게시물삭제")){
             Container.contentController.delete();
-        } else if(cmd.equals("시스템종료")){
+        } else if(rq.getUrlPath().equals("개인정보수정")){
+            Container.memberController.membermodify();
+        }else if(cmd.equals("시스템종료")){
             System.out.println("시스템 종료");
             System.exit(0);
         }else {

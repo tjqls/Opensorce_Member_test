@@ -16,4 +16,10 @@ public class MemberService {
     public Member getMemberByLoginId(String loginId) {
         return memberRepository.getMemberByLoginId(loginId);
     }
+
+    public Member getMemberByLoginPw(String loginPw){
+        return memberRepository.getMemberByLoginPw(loginPw);
+    }
 }
+
+// 회원가입 로그인 로그아웃 로그인상태확인

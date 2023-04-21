@@ -20,7 +20,7 @@ public class MemberRepository {
 
     public int join(String loginId, String loginPw, String name, String birth, String gender, String e_mail) {
         SecSql sql = new SecSql();
-        sql.append("INSERT INTO member");
+        sql.append("INSERT INTO \'user\'");
         sql.append("SET regDate = NOW()");
         sql.append(", updateDate = NOW()");
         sql.append(", loginId = ?", loginId);
@@ -50,4 +50,18 @@ public class MemberRepository {
         return new Member(memberMap);
     }
 
+    public Member getMemberByLoginPw(String loginPw) {
+        SecSql sql = new SecSql();
+
+        sql.append("SELECT *");
+        sql.append("FROM `member`");
+        sql.append("WHERE loginPw = ?", loginPw);
+
+        Map<String, Object> memberMap = DBUtil.selectRow(Container.conn, sql);
+
+        if (memberMap.isEmpty()) {
+            return null;
+        }
+        return new Member(memberMap);
+    }
 }
